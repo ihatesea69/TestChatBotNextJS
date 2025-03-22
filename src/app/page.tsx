@@ -1,102 +1,270 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className="flex items-center">
+            <h1 className="text-2xl font-bold text-indigo-600">ChatGPT SaaS</h1>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Link
+              href="/login"
+              className="text-gray-600 hover:text-gray-900 font-medium"
+            >
+              Đăng nhập
+            </Link>
+            <Link
+              href="/login"
+              className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+            >
+              Dùng thử miễn phí
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6">
+                Tăng năng suất công việc với AI Assistant
+              </h2>
+              <p className="text-xl mb-8">
+                ChatGPT SaaS cung cấp giải pháp trí tuệ nhân tạo để giúp bạn tự
+                động hóa công việc, tăng năng suất và sáng tạo hơn trong công
+                việc hàng ngày.
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <Link
+                  href="/login"
+                  className="bg-white text-indigo-600 px-6 py-3 rounded-md font-medium text-center hover:bg-gray-50 transition-colors"
+                >
+                  Bắt đầu ngay
+                </Link>
+                <Link
+                  href="#features"
+                  className="border border-white text-white px-6 py-3 rounded-md font-medium text-center hover:bg-white/10 transition-colors"
+                >
+                  Tìm hiểu thêm
+                </Link>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="bg-white p-4 rounded-lg shadow-xl">
+                <div className="bg-gray-50 p-4 rounded-md">
+                  <div className="h-6 flex items-center space-x-2 mb-4">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="bg-indigo-100 p-3 rounded-md">
+                      <p className="text-gray-700">
+                        Bạn có thể giúp tôi tóm tắt bài viết này không?
+                      </p>
+                    </div>
+                    <div className="bg-indigo-600 p-3 rounded-md">
+                      <p className="text-white">
+                        Tôi sẽ giúp bạn tóm tắt nội dung chính của bài viết...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Tính năng nổi bật
+            </h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Khám phá những gì ChatGPT SaaS có thể làm cho bạn
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Trò chuyện thông minh
+              </h3>
+              <p className="text-gray-600">
+                Trò chuyện với AI của chúng tôi để nhận câu trả lời nhanh chóng
+                và chính xác cho mọi câu hỏi của bạn.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Tạo nội dung
+              </h3>
+              <p className="text-gray-600">
+                Tạo nội dung chất lượng cao cho blog, email, mạng xã hội và
+                nhiều hơn nữa chỉ với vài cú nhấp chuột.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Tích hợp dễ dàng
+              </h3>
+              <p className="text-gray-600">
+                Tích hợp nhanh chóng với các ứng dụng và công cụ bạn đang sử
+                dụng hàng ngày.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-indigo-600 text-white py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-extrabold mb-6">
+            Sẵn sàng trải nghiệm sức mạnh của AI?
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Đăng ký ngay hôm nay để có 7 ngày dùng thử miễn phí. Không cần thẻ
+            tín dụng.
+          </p>
+          <Link
+            href="/login"
+            className="bg-white text-indigo-600 px-8 py-3 rounded-md font-medium inline-block hover:bg-gray-100 transition-colors"
+          >
+            Đăng ký miễn phí
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">ChatGPT SaaS</h3>
+              <p className="text-gray-400">
+                Giải pháp AI tiên tiến cho doanh nghiệp và cá nhân.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium mb-4">Sản phẩm</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Tính năng
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Bảng giá
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Ứng dụng
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium mb-4">Công ty</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Về chúng tôi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Liên hệ
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium mb-4">Pháp lý</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Điều khoản
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-gray-400 hover:text-white">
+                    Bảo mật
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>
+              &copy; {new Date().getFullYear()} ChatGPT SaaS. Đã đăng ký bản
+              quyền.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
